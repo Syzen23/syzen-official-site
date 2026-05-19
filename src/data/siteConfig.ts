@@ -107,6 +107,26 @@ export interface PortfolioProject {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    title: "Website CMS",
+    category: "Company Profile & Admin Dashboard",
+    description:
+      "Website CMS modern dengan tampilan profesional yang dirancang untuk memudahkan pengelolaan konten, data, dan informasi melalui dashboard admin yang responsif, efisien, dan user-friendly.",
+    accent: "#7c3aed",
+    image: "/assets/projects/project_7.png",
+    url: "syzen.web/esport",
+    filterGroup: "company",
+  },
+  {
+    title: "Web Playground (Google)",
+    category: "Sistem Khusus / Web App",
+    description:
+      "Website eksperimen interaktif yang dibuat saat mengikuti event JUARAVIBECODING, menghadirkan eksplorasi UI modern, animasi halus, serta pengalaman visual kreatif yang responsif di berbagai perangkat.",
+    accent: "#7c3aed",
+    image: "/assets/projects/project_8.png",
+    url: "syzen.web/esport",
+    filterGroup: "custom",
+  },
+  {
     title: "Sistem Absensi Organisasi",
     category: "Sistem Khusus / Web App",
     description:
@@ -134,7 +154,7 @@ export const portfolioProjects: PortfolioProject[] = [
     accent: "#f59e0b",
     image: "/assets/projects/project_3.png",
     url: "syzen.web/event-page",
-    filterGroup: "landing",
+    filterGroup: "custom",
   },
   {
     title: "Web Hotel Profesional",
@@ -148,13 +168,13 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     title: "Web E-Commerce",
-    category: "Sistem Khusus / Web App",
+    category: "Landing Page",
     description:
       "Platform toko online dengan desain modern yang menampilkan produk secara menarik, dilengkapi fitur katalog, detail produk, dan pengalaman belanja yang responsif.",
     accent: "#22c55e",
     image: "/assets/projects/project_5.png",
     url: "syzen.web/dashboard-absensi",
-    filterGroup: "custom",
+    filterGroup: "landing",
   },
   {
     title: "Web Taman Satwa",
