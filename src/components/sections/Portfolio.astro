@@ -50,11 +50,15 @@ import { portfolioProjects, whatsappUrl } from "../../data/siteConfig";
     >
       {
         portfolioProjects.map((project, index) => (
-          <article
-            class="project-card col-span-1 overflow-hidden border border-white/6 rounded-2xl bg-brand-card/85 backdrop-blur-md shadow-[0_12px_36px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-coral/30 hover:shadow-[0_16px_40px_rgba(255,101,63,0.08)] group flex flex-col h-full reveal-on-scroll"
-            style={`--accent: ${project.accent}; transition-delay: ${index * 80}ms;`}
+          <div
+            class="project-card-wrapper col-span-1 reveal-on-scroll h-full"
+            style={`transition-delay: ${index * 80}ms;`}
             data-category={project.filterGroup}
           >
+            <article
+              class="overflow-hidden border border-white/6 rounded-2xl bg-brand-card shadow-[0_12px_36px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-coral/30 hover:shadow-[0_16px_40px_rgba(255,101,63,0.08)] group flex flex-col h-full"
+              style={`--accent: ${project.accent};`}
+            >
             <div class="relative bg-brand-bg overflow-hidden border-b border-white/6 flex flex-col shrink-0">
               {/* Browser Header Bar */}
               <div class="flex items-center justify-between h-[34px] px-3.5 bg-[rgba(26,17,54,0.9)] border-b border-white/5 select-none shrink-0">
@@ -111,7 +115,8 @@ import { portfolioProjects, whatsappUrl } from "../../data/siteConfig";
                 </a>
               </div>
             </div>
-          </article>
+            </article>
+          </div>
         ))
       }
     </div>
@@ -134,7 +139,7 @@ import { portfolioProjects, whatsappUrl } from "../../data/siteConfig";
     if (!grid) return;
 
     const cards = Array.from(
-      grid.querySelectorAll(".project-card"),
+      grid.querySelectorAll(".project-card-wrapper"),
     ) as HTMLElement[];
     const tabs = document.querySelectorAll(".portfolio-tab");
     const showMoreBtn = document.getElementById("btn-show-more");

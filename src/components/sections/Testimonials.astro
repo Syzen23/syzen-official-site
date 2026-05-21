@@ -27,17 +27,8 @@ import { Star, ShieldCheck, Quote } from "lucide-react";
 
     {/* Right Column: Sliding Infinite Marquee Grid Stage */}
     <div 
-      class="relative w-full overflow-hidden py-4 select-none reveal-on-scroll-scale"
+      class="relative w-full overflow-hidden py-4 select-none reveal-on-scroll-scale marquee-stage"
     >
-      {/* Edge Fading Shaders for Luxury Visual Depth */}
-      <div
-        class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#1E104E] via-[#1E104E]/30 to-transparent z-10 pointer-events-none"
-      >
-      </div>
-      <div
-        class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#1E104E] via-[#1E104E]/30 to-transparent z-10 pointer-events-none"
-      >
-      </div>
 
       {/* Sliding Track wrapper */}
       <div class="marquee-track">
@@ -142,6 +133,24 @@ import { Star, ShieldCheck, Quote } from "lucide-react";
 </section>
 
 <style>
+  /* Fade marquee edges using CSS mask — works with any background color behind it */
+  .marquee-stage {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 9%,
+      black 91%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 9%,
+      black 91%,
+      transparent 100%
+    );
+  }
+
   .marquee-track {
     display: flex;
     gap: 16px;
@@ -158,8 +167,7 @@ import { Star, ShieldCheck, Quote } from "lucide-react";
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
-    background-color: rgba(39, 24, 94, 0.75);
-    backdrop-filter: blur(4px);
+    background-color: rgba(39, 24, 94, 0.85);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;

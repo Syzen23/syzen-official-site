@@ -32,14 +32,17 @@ function parsePrice(priceStr: string) {
           const isFeatured = plan.featured;
 
           return (
-            <article
-              class={`relative flex flex-col p-8 border rounded-2xl bg-brand-card/85 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 h-full reveal-on-scroll ${
-                isFeatured
-                  ? "border-brand-coral bg-gradient-to-b from-brand-card/95 to-brand-bg/95 shadow-[0_20px_50px_rgba(255,101,63,0.15)] scale-[1.02] z-10 hover:border-brand-coral hover:shadow-[0_24px_60px_rgba(255,101,63,0.22)]"
-                  : "border-white/6 hover:border-brand-coral/30 hover:shadow-[0_16px_40px_rgba(255,101,63,0.08)]"
-              }`}
+            <div
+              class={`reveal-on-scroll h-full ${isFeatured ? 'z-10 relative' : ''}`}
               style={`transition-delay: ${index * 80}ms;`}
             >
+              <article
+                class={`relative flex flex-col p-8 border rounded-2xl bg-brand-card transition-all duration-300 hover:-translate-y-1.5 h-full ${
+                  isFeatured
+                    ? "border-brand-coral bg-gradient-to-b from-brand-card/95 to-brand-bg/95 shadow-[0_20px_50px_rgba(255,101,63,0.15)] scale-[1.02] hover:border-brand-coral hover:shadow-[0_24px_60px_rgba(255,101,63,0.22)]"
+                    : "border-white/6 hover:border-brand-coral/30 hover:shadow-[0_16px_40px_rgba(255,101,63,0.08)]"
+                }`}
+              >
               {isFeatured && (
                 <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1 rounded-full border border-brand-coral/30 bg-brand-coral text-white text-[11px] font-extrabold tracking-widest uppercase shadow-[0_4px_12px_rgba(255,101,63,0.3)]">
                   Recommended
@@ -105,7 +108,8 @@ function parsePrice(priceStr: string) {
                 <span>Mulai Diskusi</span>
                 <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </a>
-            </article>
+              </article>
+            </div>
           );
         })
       }

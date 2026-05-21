@@ -23,7 +23,7 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
 
         {/* Overlapping Floating Badge (Name Card) */}
         <div
-          class="absolute bottom-6 left-6 right-6 px-5 py-3.5 border border-white/10 rounded-xl bg-brand-bg/90 backdrop-blur-md flex flex-col gap-0.5 shadow-2xl"
+          class="absolute bottom-6 left-6 right-6 px-5 py-3.5 border border-white/10 rounded-xl bg-brand-bg/90 flex flex-col gap-0.5 shadow-2xl"
         >
           <h4
             class="m-0 text-white font-satoshi font-bold text-[15.5px] tracking-wide"
@@ -39,9 +39,7 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
       </div>
 
       {/* Right Column: Interactive Dropdown / Accordion */}
-      <div 
-        class="grid justify-items-start text-left w-full reveal-on-scroll"
-      >
+      <div class="grid justify-items-start text-left w-full reveal-on-scroll">
         <p class="section-kicker">Meet The Creator</p>
         <h2 class="section-heading-h2">
           Membangun Kepercayaan Lewat Keahlian Personal
@@ -85,9 +83,9 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
                 >
                   Halo, saya Muhammad Sajid Izzulhaq. Berbekal latar belakang di
                   bidang Teknik Informatika, fokus utama saya adalah membantu
-                  pemilik UMKM dan bisnis lokal untuk melangkah ke dunia digital.
-                  Saya percaya bahwa website yang baik bukan sekadar tampil
-                  menarik, tapi harus bisa menjadi solusi yang memudahkan
+                  pemilik UMKM dan bisnis lokal untuk melangkah ke dunia
+                  digital. Saya percaya bahwa website yang baik bukan sekadar
+                  tampil menarik, tapi harus bisa menjadi solusi yang memudahkan
                   operasional dan mendukung pertumbuhan bisnis Anda.
                 </div>
               </div>
@@ -176,9 +174,7 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
 
     {/* Part B: Workflow / Process Grid */}
     <div class="pt-12 border-t border-white/8">
-      <div 
-        class="max-w-[760px] mb-10 reveal-on-scroll"
-      >
+      <div class="max-w-[760px] mb-10 reveal-on-scroll">
         <p class="section-kicker">Our Workflow</p>
         <h3
           class="text-white text-xl sm:text-2xl font-satoshi font-bold leading-tight"
@@ -192,8 +188,8 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
       >
         {
           processSteps.map((step, index) => (
-            <article 
-              class="relative grid gap-2.5 align-content-start p-5 border border-white/6 rounded-xl bg-brand-card/80 backdrop-blur-md shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-all duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
+            <article
+              class="relative grid gap-2.5 align-content-start p-5 border border-white/6 rounded-xl bg-brand-card shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-[border-color,box-shadow] duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
               style={`transition-delay: ${index * 80}ms;`}
             >
               {/* Card Header: Number Badge and Title side-by-side to maximize space */}

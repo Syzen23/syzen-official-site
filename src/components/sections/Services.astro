@@ -15,7 +15,7 @@ import { ChevronDown, Check } from 'lucide-react';
 		<div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 			{services.map((service, index) => (
 				<article 
-					class="p-6 border border-white/6 rounded-xl bg-brand-card/80 backdrop-blur-md shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-all duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
+					class="p-6 border border-white/6 rounded-xl bg-brand-card shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-[border-color,box-shadow] duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
 					style={`transition-delay: ${index * 80}ms;`}
 				>
 					<h3 class="mb-2.5 text-white text-[16px] sm:text-[17px] font-bold leading-tight font-satoshi group-hover:text-brand-gold transition-colors duration-200">{service.title}</h3>

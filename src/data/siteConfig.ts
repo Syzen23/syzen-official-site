@@ -200,7 +200,7 @@ export interface PackageItem {
 export const packages: PackageItem[] = [
   {
     name: "Landing Page Bisnis",
-    price: "Mulai dari Rp1.500.000",
+    price: "Mulai dari Rp600.000",
     description:
       "Website satu halaman premium berorientasi konversi tinggi untuk promosi produk atau jasa Anda.",
     fit: "Cocok untuk promo produk, event, campaign iklan, dan UMKM yang ingin cepat go-online.",
@@ -213,14 +213,16 @@ export const packages: PackageItem[] = [
       "Setup SEO Dasar (Meta Tags & Sitemap)",
       "Setup SSL Keamanan Selamanya",
       "Gratis Revisi 2x & Panduan Kelola",
+      "Sudah Termasuk Domain",
+      "Dokumentasi Panduan Penggunaan"
     ],
     featured: false,
   },
   {
     name: "Company Profile",
-    price: "Mulai dari Rp3.000.000",
+    price: "Mulai dari Rp950.000",
     description:
-      "Website multi-halaman profesional untuk memamerkan profil usaha dan membangun kredibilitas kuat.",
+    "Website multi-halaman profesional untuk memamerkan profil usaha dan membangun kredibilitas kuat.",
     fit: "Cocok untuk korporasi, UMKM berkembang, dan penyedia jasa yang butuh trust signal kokoh.",
     features: [
       "Struktur Multi-Halaman (Up to 6 Halaman)",
@@ -230,6 +232,8 @@ export const packages: PackageItem[] = [
       "Setup SEO Premium & Indeks Google Search Console",
       "Setup SSL Keamanan Selamanya",
       "Gratis Revisi 3x & Dukungan Teknis",
+      "Sudah Termasuk Domain",
+      "Dokumentasi Panduan Penggunaan"
     ],
     featured: true,
   },
@@ -247,6 +251,8 @@ export const packages: PackageItem[] = [
       "Integrasi API Pihak Ketiga (Payment Gateway, dll)",
       "Penyerahan Source Code & Hak Milik Penuh",
       "Dukungan Pemeliharaan & Monitoring (1 Bulan)",
+      "Sudah Termasuk Domain",
+      "Dokumentasi Panduan Penggunaan"
     ],
     featured: false,
   },
