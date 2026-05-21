@@ -2,21 +2,42 @@
 import { navItems, whatsappUrl } from "../data/siteConfig";
 ---
 
-<footer class="border-t border-white/10 bg-[#0c061e] pt-16 pb-8 mt-12 relative overflow-hidden">
+<footer
+  class="border-t border-white/10 bg-[#0c061e] pt-16 pb-8 mt-12 relative overflow-hidden"
+>
   {/* Ambient background glow for footer */}
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-brand-coral/50 to-transparent opacity-50"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-brand-coral/5 blur-[80px] rounded-full pointer-events-none -z-10"></div>
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-brand-coral/50 to-transparent opacity-50"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-brand-coral/5 blur-[80px] rounded-full pointer-events-none -z-10"
+  >
+  </div>
 
   <div class="container relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start mb-16">
+    <div
+      class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start mb-16"
+    >
       {/* Brand & Bio (Spans 5 cols on desktop) */}
       <div class="md:col-span-5 flex flex-col gap-5">
-        <a class="inline-flex items-center gap-3 text-white text-lg font-extrabold no-underline w-fit" href="#top" aria-label="Syzen Web home">
-          <span class="inline-grid w-10 h-10 place-items-center rounded-[10px] bg-brand-coral text-white font-extrabold shadow-[0_8px_20px_rgba(255,101,63,0.3)] text-base">S</span>
+        <a
+          class="inline-flex items-center gap-3 text-white text-lg font-extrabold no-underline w-fit"
+          href="#top"
+          aria-label="Syzen Web home"
+        >
+          <span
+            class="inline-grid w-10 h-10 place-items-center rounded-[10px] bg-brand-coral text-white font-extrabold shadow-[0_8px_20px_rgba(255,101,63,0.3)] text-base"
+            >S</span
+          >
           <span class="font-satoshi tracking-wide text-[19px]">Syzen Web</span>
         </a>
-        <p class="text-slate-400 text-[14px] leading-relaxed max-w-sm font-inter">
-          Mitra pembuatan website profesional untuk bantu bisnis Anda bersaing dan mendominasi pasar digital dengan desain premium, fungsionalitas cerdas, dan performa super cepat.
+        <p
+          class="text-slate-400 text-[14px] leading-relaxed max-w-sm font-inter"
+        >
+          Mitra pembuatan website profesional untuk bantu bisnis Anda bersaing
+          dan mendominasi pasar digital dengan desain premium, fungsionalitas
+          cerdas, dan performa super cepat.
         </p>
       </div>
 
@@ -25,27 +46,50 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
 
       {/* Quick Links (Spans 3 cols) */}
       <div class="md:col-span-3 flex flex-col gap-4">
-        <h4 class="text-white font-satoshi font-bold tracking-wide mb-2">Navigasi</h4>
+        <h4 class="text-white font-satoshi font-bold tracking-wide mb-2">
+          Navigasi
+        </h4>
         <nav class="flex flex-col gap-3.5" aria-label="Footer navigation">
-          {navItems.map((item) => (
-            <a class="text-slate-400 text-[14px] font-medium hover:text-brand-coral transition-colors w-fit relative group flex items-center gap-2" href={item.href}>
-              <span class="w-1 h-1 rounded-full bg-brand-coral/0 group-hover:bg-brand-coral transition-colors"></span>
-              {item.label}
-            </a>
-          ))}
+          {
+            navItems.map((item) => (
+              <a
+                class="text-slate-400 text-[14px] font-medium hover:text-brand-coral transition-colors w-fit relative group flex items-center gap-2"
+                href={item.href}
+              >
+                <span class="w-1 h-1 rounded-full bg-brand-coral/0 group-hover:bg-brand-coral transition-colors" />
+                {item.label}
+              </a>
+            ))
+          }
         </nav>
       </div>
 
       {/* Socials & Contact (Spans 3 cols) */}
       <div class="md:col-span-3 flex flex-col gap-4">
-        <h4 class="text-white font-satoshi font-bold tracking-wide mb-2">Hubungi Kami</h4>
+        <h4 class="text-white font-satoshi font-bold tracking-wide mb-2">
+          Hubungi Kami
+        </h4>
         <div class="flex flex-col gap-3.5">
-          <a class="text-slate-400 text-[14px] font-medium hover:text-emerald-400 transition-colors flex items-center gap-2.5 w-fit group" href={whatsappUrl} target="_blank" rel="noreferrer">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 group-hover:bg-emerald-400 group-hover:animate-ping transition-colors"></span>
+          <a
+            class="text-slate-400 text-[14px] font-medium hover:text-emerald-400 transition-colors flex items-center gap-2.5 w-fit group"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 group-hover:bg-emerald-400 group-hover:animate-ping transition-colors"
+            ></span>
             WhatsApp 24/7
           </a>
-          <a class="text-slate-400 text-[14px] font-medium hover:text-brand-gold transition-colors flex items-center gap-2.5 w-fit group" href="https://www.instagram.com/syzen.web/" target="_blank" rel="noreferrer">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-gold/50 group-hover:bg-brand-gold transition-colors"></span>
+          <a
+            class="text-slate-400 text-[14px] font-medium hover:text-brand-gold transition-colors flex items-center gap-2.5 w-fit group"
+            href="https://www.instagram.com/syzen.web/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-brand-gold/50 group-hover:bg-brand-gold transition-colors"
+            ></span>
             Instagram
           </a>
         </div>
@@ -53,7 +97,9 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
     </div>
 
     {/* Bottom Copyright Bar */}
-    <div class="border-t border-white/10 pt-6 pb-2 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] font-inter text-slate-500">
+    <div
+      class="border-t border-white/10 pt-6 pb-2 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] font-inter text-slate-500"
+    >
       <p>&copy; {new Date().getFullYear()} Syzen Web. All rights reserved.</p>
       <p class="flex items-center gap-1.5">
         Designed with <span class="text-brand-coral animate-pulse">❤</span> in Indonesia.
