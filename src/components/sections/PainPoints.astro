@@ -4,13 +4,13 @@ const painPoints = [
     id: "01",
     text: "Bisnis terasa jalan di tempat karena operasional masih manual dan belum punya sistem yang siap melayani pelanggan 24 jam penuh?",
     rotation: "-rotate-1",
-    pinColor: "from-brand-coral to-red-600",
+    pinColor: "from-blue-400 to-blue-600",
   },
   {
     id: "02",
     text: "Kualitas layanan Anda luar biasa, tapi sayangnya tidak tercermin dari tampilan website yang terkesan kaku dan kurang profesional?",
     rotation: "rotate-1",
-    pinColor: "from-brand-gold to-orange-500",
+    pinColor: "from-sky-400 to-sky-600",
   },
   {
     id: "03",
@@ -22,24 +22,24 @@ const painPoints = [
     id: "04",
     text: "Kapok pakai jasa web murah yang menjanjikan bulan bintang, namun hasilnya penuh error dan ditinggal kabur tanpa support teknis?",
     rotation: "rotate-[1.5deg]",
-    pinColor: "from-blue-400 to-blue-600",
+    pinColor: "from-indigo-400 to-indigo-600",
   },
   {
     id: "05",
     text: "Sedang bersiap untuk pitching dan butuh company profile digital kelas premium yang bonafide untuk meyakinkan klien besar?",
     rotation: "-rotate-1",
-    pinColor: "from-purple-400 to-purple-600",
+    pinColor: "from-blue-400 to-indigo-600",
   },
   {
     id: "06",
     text: "Traffic iklan sudah kencang, tapi konversi bocor karena website super lambat dan layout-nya berantakan saat dibuka di HP?",
     rotation: "rotate-1",
-    pinColor: "from-brand-coral to-red-600",
+    pinColor: "from-sky-400 to-blue-600",
   },
 ];
 ---
 
-<section class="section bg-transparent scroll-mt-24 md:scroll-mt-28" id="pain-points">
+<section class="section scroll-mt-24 md:scroll-mt-28 bg-[#0a1628]" id="pain-points">
   <div class="container">
     <div class="space-y-12">
       <div class="max-w-[760px] mx-auto text-center reveal-on-scroll">
@@ -59,7 +59,7 @@ const painPoints = [
               class={`reveal-on-scroll h-full ${point.rotation} transition-transform duration-500 hover:rotate-0 hover:z-10`}
               style={`transition-delay: ${index * 80}ms;`}
             >
-              <div class="relative h-full flex flex-col p-6 sm:p-7 rounded-lg bg-brand-card/90 backdrop-blur-sm border border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)] group mt-3">
+              <div class="relative h-full flex flex-col p-6 sm:p-7 rounded-lg bg-brand-card/90 backdrop-blur-sm border border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2 hover:border-brand-accent/30 hover:shadow-[0_20px_45px_rgba(59,130,246,0.1)] group mt-3">
                 
                 {/* Pushpin (Jarum Pentul) */}
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center justify-center z-20 transition-transform duration-300 group-hover:-translate-y-1">
@@ -90,3 +90,10 @@ const painPoints = [
     </div>
   </div>
 </section>
+
+<!-- Wave: PainPoints #0a1628 → Services #050d1a -->
+<div class="section-wave" style="background-color:#0a1628;" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,0 L0,45 C200,15 400,68 600,38 C800,10 1040,65 1200,40 C1320,22 1400,58 1440,42 L1440,80 L0,80 Z" fill="#050d1a"/>
+  </svg>
+</div>

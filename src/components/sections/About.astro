@@ -3,7 +3,7 @@ import { processSteps } from "../../data/siteConfig";
 import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
 ---
 
-<section class="section" id="about">
+<section class="section bg-[#050d1a]" id="about">
   <div class="container space-y-16">
     {/* Part A: Personal Branding & Accordion Dropdown */}
     <div
@@ -11,7 +11,7 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
     >
       {/* Left Column: Portrait Image Card */}
       <div
-        class="relative w-full max-w-[360px] md:max-w-[400px] aspect-[4/5] mx-auto lg:mr-auto rounded-2xl border border-white/8 bg-brand-card p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-300 hover:border-brand-coral/30 reveal-on-scroll-left"
+        class="relative w-full max-w-[360px] md:max-w-[400px] aspect-[4/5] mx-auto lg:mr-auto rounded-2xl border border-white/8 bg-brand-card p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-300 hover:border-brand-accent/30 reveal-on-scroll-left"
       >
         {/* User Profile Image */}
         <img
@@ -26,7 +26,7 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
           class="absolute bottom-6 left-6 right-6 px-5 py-3.5 border border-white/10 rounded-xl bg-brand-bg/90 flex flex-col gap-0.5 shadow-2xl"
         >
           <h4
-            class="m-0 text-white font-satoshi font-bold text-[15.5px] tracking-wide"
+            class="m-0 text-white font-jakarta font-bold text-[15.5px] tracking-wide"
           >
             Sanzzyy
           </h4>
@@ -50,11 +50,10 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
           berkualitas tinggi untuk menciptakan website berkinerja tinggi.
         </p>
 
-        {/* Details Dropdowns Accordion */}
         <div class="space-y-3.5 w-full">
           {/* Item 1 */}
           <details
-            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-coral/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-accent/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
             open
           >
             <summary
@@ -62,16 +61,16 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
             >
               <div class="flex items-center gap-3.5">
                 <span
-                  class="text-brand-gold font-extrabold text-sm md:text-base font-satoshi"
+                  class="text-brand-gold font-extrabold text-sm md:text-base font-jakarta"
                   >01</span
                 >
                 <span
-                  class="font-bold text-[14px] md:text-[15.5px] font-satoshi tracking-wide"
+                  class="font-bold text-[14px] md:text-[15.5px] font-jakarta tracking-wide"
                   >Siapa di Balik Syzen Web?</span
                 >
               </div>
               <span
-                class="transition-transform duration-300 group-open:rotate-180 text-brand-coral shrink-0"
+                class="transition-transform duration-300 group-open:rotate-180 text-brand-accent shrink-0"
               >
                 <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
               </span>
@@ -94,23 +93,23 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
 
           {/* Item 2 */}
           <details
-            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-coral/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-accent/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
           >
             <summary
               class="flex items-center justify-between p-4.5 cursor-pointer list-none select-none text-white hover:text-brand-gold transition-colors duration-200"
             >
               <div class="flex items-center gap-3.5">
                 <span
-                  class="text-brand-gold font-extrabold text-sm md:text-base font-satoshi"
+                  class="text-brand-gold font-extrabold text-sm md:text-base font-jakarta"
                   >02</span
                 >
                 <span
-                  class="font-bold text-[14px] md:text-[15.5px] font-satoshi tracking-wide"
+                  class="font-bold text-[14px] md:text-[15.5px] font-jakarta tracking-wide"
                   >Komitmen & Pendekatan Kerja</span
                 >
               </div>
               <span
-                class="transition-transform duration-300 group-open:rotate-180 text-brand-coral shrink-0"
+                class="transition-transform duration-300 group-open:rotate-180 text-brand-accent shrink-0"
               >
                 <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
               </span>
@@ -133,23 +132,23 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
 
           {/* Item 3 */}
           <details
-            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-coral/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+            class="group border border-white/8 rounded-xl bg-brand-card overflow-hidden transition-all duration-300 open:border-brand-accent/30 open:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
           >
             <summary
               class="flex items-center justify-between p-4.5 cursor-pointer list-none select-none text-white hover:text-brand-gold transition-colors duration-200"
             >
               <div class="flex items-center gap-3.5">
                 <span
-                  class="text-brand-gold font-extrabold text-sm md:text-base font-satoshi"
+                  class="text-brand-gold font-extrabold text-sm md:text-base font-jakarta"
                   >03</span
                 >
                 <span
-                  class="font-bold text-[14px] md:text-[15.5px] font-satoshi tracking-wide"
+                  class="font-bold text-[14px] md:text-[15.5px] font-jakarta tracking-wide"
                   >Teknologi Modern & Speed</span
                 >
               </div>
               <span
-                class="transition-transform duration-300 group-open:rotate-180 text-brand-coral shrink-0"
+                class="transition-transform duration-300 group-open:rotate-180 text-brand-accent shrink-0"
               >
                 <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
               </span>
@@ -177,7 +176,7 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
       <div class="max-w-[760px] mb-10 reveal-on-scroll">
         <p class="section-kicker">Our Workflow</p>
         <h3
-          class="text-white text-xl sm:text-2xl font-satoshi font-bold leading-tight"
+          class="text-white text-xl sm:text-2xl font-jakarta font-bold leading-tight"
         >
           Alur Kerja yang Transparan & Terarah
         </h3>
@@ -189,15 +188,14 @@ import { ChevronDown, ArrowRight, ArrowDown } from "lucide-react";
         {
           processSteps.map((step, index) => (
             <article
-              class="relative grid gap-2.5 align-content-start p-5 border border-white/6 rounded-xl bg-brand-card shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-[border-color,box-shadow] duration-300 hover:border-brand-coral/30 hover:shadow-[0_12px_32px_rgba(255,101,63,0.08)] group reveal-on-scroll"
+              class="relative grid gap-2.5 align-content-start p-5 border border-white/6 rounded-xl bg-brand-card shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition-[border-color,box-shadow] duration-300 hover:border-brand-accent/30 hover:shadow-[0_12px_32px_rgba(59,130,246,0.08)] group reveal-on-scroll"
               style={`transition-delay: ${index * 80}ms;`}
             >
-              {/* Card Header: Number Badge and Title side-by-side to maximize space */}
               <div class="flex items-center gap-3.5 mb-1 shrink-0">
-                <span class="w-8.5 h-8.5 rounded-full bg-brand-coral/10 border border-brand-coral/25 flex items-center justify-center text-brand-coral font-satoshi font-extrabold text-[14px] shadow-[0_0_12px_rgba(255,101,63,0.1)] shrink-0">
+                <span class="w-8.5 h-8.5 rounded-full bg-brand-accent/10 border border-brand-accent/25 flex items-center justify-center text-brand-gold font-jakarta font-extrabold text-[14px] shadow-[0_0_12px_rgba(59,130,246,0.1)] shrink-0">
                   {step.number}
                 </span>
-                <h3 class="text-white text-[14.5px] sm:text-[15px] font-bold leading-snug font-satoshi tracking-wide group-hover:text-brand-gold transition-colors duration-200">
+                <h3 class="text-white text-[14.5px] sm:text-[15px] font-bold leading-snug font-jakarta tracking-wide group-hover:text-brand-gold transition-colors duration-200">
                   {step.title}
                 </h3>
               </div>

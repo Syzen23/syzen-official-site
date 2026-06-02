@@ -18,10 +18,10 @@ export const navItems: NavItem[] = [
 ];
 
 export const valueHighlights: string[] = [
-  "Responsive",
-  "Fast loading",
-  "Custom design",
-  "CTA WhatsApp",
+  "Performa Website Cepat",
+  "Desain Premium",
+  "Harga Transparan",
+  "Selesai Tepat Waktu",
 ];
 
 export interface ServicePoint {
@@ -144,7 +144,7 @@ export const portfolioProjects: PortfolioProject[] = [
     accent: "#0f766e",
     image: "/assets/projects/project_2.png",
     url: "syzen.web/company-profile",
-    filterGroup: "company",
+    filterGroup: "custom",
   },
   {
     title: "Sistem Input Matakuliah",
@@ -197,64 +197,155 @@ export interface PackageItem {
   featured: boolean;
 }
 
-export const packages: PackageItem[] = [
+export interface PackageCategory {
+  id: string;
+  name: string;
+  packages: PackageItem[];
+}
+
+export const packageCategories: PackageCategory[] = [
   {
-    name: "Landing Page Bisnis",
-    price: "Mulai dari Rp600.000",
-    description:
-      "Website satu halaman premium berorientasi konversi tinggi untuk promosi produk atau jasa Anda.",
-    fit: "Cocok untuk promo produk, event, campaign iklan, dan UMKM yang ingin cepat go-online.",
-    features: [
-      "Desain Premium 1 Halaman (Single-Page)",
-      "Maksimal 5 Bagian Halaman (Sections)",
-      "Tampilan Responsif (Mobile & Desktop)",
-      "Integrasi Tombol WhatsApp Direct Chat",
-      "Optimasi Kecepatan Loading Website",
-      "Setup SEO Dasar (Meta Tags & Sitemap)",
-      "Setup SSL Keamanan Selamanya",
-      "Gratis Revisi 2x & Panduan Kelola",
-      "Sudah Termasuk Domain",
-      "Dokumentasi Panduan Penggunaan"
+    id: "website",
+    name: "Website Profile / Landing Page",
+    packages: [
+      {
+        name: "BASIC",
+        price: "Rp750.000",
+        description: "Landing Page Profesional (1 Halaman)",
+        fit: "Cocok untuk UMKM, jasa personal, dan promosi produk sederhana.",
+        features: [
+          "Hingga 5 Section Konten",
+          "Desain Responsif (Mobile & Desktop)",
+          "Tombol WhatsApp Direct Chat",
+          "Optimasi Kecepatan Website",
+          "SEO Dasar (Meta Title & Description)",
+          "SSL Security",
+          "2x Revisi Minor",
+          "Panduan Penggunaan Website",
+          "Domain & Hosting Menyesuaikan Paket",
+        ],
+        featured: false,
+      },
+      {
+        name: "STANDARD",
+        price: "Rp1.500.000",
+        description: "Website Company Profile (Hingga 6 Halaman)",
+        fit: "Cocok untuk bisnis menengah yang ingin tampil kredibel dan terpercaya.",
+        features: [
+          "Beranda, Tentang Kami, Layanan, Portofolio / Galeri, Kontak, Halaman Tambahan",
+          "Formulir Kontak",
+          "Integrasi Google Maps",
+          "Animasi & Interaksi Modern",
+          "SEO Setup Lengkap & Google Search Console",
+          "SSL Security",
+          "3x Revisi Minor & Dokumentasi Penggunaan",
+          "Domain Gratis 1 Tahun",
+        ],
+        featured: true,
+      },
+      {
+        name: "PREMIUM",
+        price: "Rp2.500.000",
+        description: "Semua Fitur Paket Standard dengan Desain Khusus",
+        fit: "Cocok untuk bisnis skala besar atau yang mengutamakan branding premium.",
+        features: [
+          "Desain UI/UX Premium & Custom",
+          "Halaman Sesuai Kebutuhan",
+          "Animasi Interaktif Premium (GSAP)",
+          "Form Lead Generation",
+          "Integrasi Social Media",
+          "Optimasi Core Web Vitals & Advanced SEO",
+          "Integrasi Google Analytics",
+          "Prioritas Support & 5x Revisi Minor",
+          "Domain Gratis 1 Tahun & Maintenance 1 Bulan",
+        ],
+        featured: false,
+      },
     ],
-    featured: false,
   },
   {
-    name: "Company Profile",
-    price: "Mulai dari Rp950.000",
-    description:
-    "Website multi-halaman profesional untuk memamerkan profil usaha dan membangun kredibilitas kuat.",
-    fit: "Cocok untuk korporasi, UMKM berkembang, dan penyedia jasa yang butuh trust signal kokoh.",
-    features: [
-      "Struktur Multi-Halaman (Up to 6 Halaman)",
-      "Halaman Beranda, Tentang Kami, Layanan, Portofolio, Kontak",
-      "Integrasi Form Kontak & Google Maps",
-      "Animasi Elegan & Visual Berkelas",
-      "Setup SEO Premium & Indeks Google Search Console",
-      "Setup SSL Keamanan Selamanya",
-      "Gratis Revisi 3x & Dukungan Teknis",
-      "Sudah Termasuk Domain",
-      "Dokumentasi Panduan Penggunaan"
+    id: "pos",
+    name: "POS / Kasir App",
+    packages: [
+      {
+        name: "BASIC",
+        price: "Rp1.500.000",
+        description: "Sistem kasir ringan untuk operasional harian",
+        fit: "Cocok untuk usaha kecil yang baru mulai digitalisasi.",
+        features: [
+          "Dashboard Admin",
+          "Kelola Produk & Kategori",
+          "Sistem Stok Barang",
+          "Transaksi Penjualan & Riwayat",
+          "Perhitungan Kembalian Otomatis",
+          "Laporan Penjualan Sederhana",
+          "Responsive (Desktop & Mobile)",
+          "Setup & Deployment",
+          "Dokumentasi & 2x Revisi Minor",
+        ],
+        featured: false,
+      },
+      {
+        name: "BUSINESS POS",
+        price: "Rp3.500.000",
+        description: "Sistem kasir lengkap dengan laporan dan manajemen",
+        fit: "Cocok untuk toko yang memiliki banyak produk dan membutuhkan laporan lebih lengkap.",
+        features: [
+          "Semua Fitur Paket Basic",
+          "Manajemen Pelanggan & Supplier",
+          "Multi Satuan Produk",
+          "Barcode Scanner Support & Cetak Struk",
+          "Laporan Penjualan & Stok Lengkap",
+          "Filter & Export Data",
+          "Hak Akses Admin dan Kasir",
+          "Dashboard Statistik Penjualan",
+          "Dukungan Teknis Awal & 3x Revisi Minor",
+        ],
+        featured: true,
+      },
+      {
+        name: "PREMIUM POS",
+        price: "Rp6.000.000",
+        description: "Sistem kasir skala besar dan enterprise",
+        fit: "Cocok untuk bisnis yang ingin sistem lebih profesional dan scalable.",
+        features: [
+          "Semua Fitur Paket Business",
+          "Multi Cabang & Multi Gudang",
+          "Sistem Bonus / Loyalty Pelanggan",
+          "Notifikasi Stok Menipis",
+          "Import/Export Data Excel & PDF",
+          "Integrasi WhatsApp",
+          "Dashboard Analitik Lengkap",
+          "Backup Database Otomatis",
+          "Prioritas Support, Maintenance 1 Bulan & 5x Revisi",
+        ],
+        featured: false,
+      },
     ],
-    featured: true,
   },
   {
-    name: "Custom Website",
-    price: "Diskusi Kebutuhan",
-    description:
-      "Website interaktif bersistem khusus yang dirancang penuh menyesuaikan alur operasional bisnis unik Anda.",
-    fit: "Cocok untuk sistem booking, e-catalog, portal dinamis, dashboard admin, atau web app khusus.",
-    features: [
-      "Analisis Kebutuhan & Desain UI/UX Eksklusif",
-      "Sistem Interaktif Kustom (Booking, Katalog, dll)",
-      "Dashboard Admin untuk Kelola Data Mandiri",
-      "Arsitektur Kode Modular (Mudah Dikembangkan)",
-      "Integrasi API Pihak Ketiga (Payment Gateway, dll)",
-      "Penyerahan Source Code & Hak Milik Penuh",
-      "Dukungan Pemeliharaan & Monitoring (1 Bulan)",
-      "Sudah Termasuk Domain",
-      "Dokumentasi Panduan Penggunaan"
+    id: "custom",
+    name: "Custom Development",
+    packages: [
+      {
+        name: "CUSTOM DEVELOPMENT",
+        price: "Request Quote",
+        description: "Solusi website dan sistem yang dibuat sesuai kebutuhan Anda.",
+        fit: "Cocok untuk proyek unik, sistem internal, atau aplikasi web terintegrasi khusus.",
+        features: [
+          "Website Pernikahan Digital & Event/Organisasi",
+          "Website Sekolah & Komunitas",
+          "Dashboard Admin Sederhana",
+          "Sistem Pendataan & Reservasi / Booking",
+          "Sistem Registrasi Online & Inventaris",
+          "Formulir & Database Online",
+          "Landing Page / Company Profile Custom",
+          "Fitur dan Tampilan Sesuai Permintaan",
+          "Harga menyesuaikan fitur, tingkat kesulitan & waktu pengerjaan.",
+        ],
+        featured: true,
+      },
     ],
-    featured: false,
   },
 ];
 

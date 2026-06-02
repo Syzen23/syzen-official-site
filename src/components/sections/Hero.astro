@@ -1,123 +1,65 @@
 ---
 import { whatsappUrl } from "../../data/siteConfig";
+import { Sparkles, Code2, MonitorSmartphone, Rocket } from "lucide-react";
 ---
 
-<section class="relative overflow-hidden py-16">
+<section
+  class="relative overflow-hidden bg-[#050d1a] pt-16 pb-12 lg:pt-32 lg:pb-16 flex items-center justify-center min-h-[50vh]"
+  aria-label="Hero"
+>
+  {/* Centered Ambient Glow (Prevents clipping at edges) */}
   <div
-    class="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(255,101,63,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,101,63,0.04)_1px,transparent_1px)] bg-[size:44px_44px] opacity-62"
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[800px] h-[300px] bg-brand-accent/20 rounded-[100%] blur-[120px] pointer-events-none animate-pulse-slow"
     aria-hidden="true"
   >
   </div>
+
+  {/* Subtle dot grid texture with faded edges */}
   <div
-    class="container relative z-10 grid grid-cols-1 xl:grid-cols-[1.06fr_0.94fr] gap-10 xl:gap-20 items-center min-h-[calc(100vh-168px)]"
+    class="absolute inset-0 pointer-events-none opacity-60"
+    style="background-image: radial-gradient(circle, rgba(59,130,246,0.15) 1px, transparent 1px); background-size: 32px 32px; mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%);"
+    aria-hidden="true"
   >
-    <div
-      class="relative z-10 grid justify-items-center xl:justify-items-start text-center xl:text-left"
-    >
-      <p
-        class="m-0 mb-4 text-brand-gold text-[12px] font-[850] uppercase tracking-wider font-inter animate-kicker"
-      >
-        Modern Website Solutions for Growing Businesses
-      </p>
-      <h1
-        class="max-w-[650px] mt-0 mb-6 text-white text-3xl sm:text-4xl md:text-5xl xl:text-[3.58rem] font-satoshi font-extrabold leading-[1.07] tracking-tight animate-title"
-      >
-        Jasa Pembuatan Website Modern untuk Bisnis Profesional
-      </h1>
-      <p
-        class="max-w-[610px] mt-0 mb-8 text-slate-300 text-base md:text-[1.08rem] font-inter leading-relaxed animate-desc"
-      >
-        Syzen Web membantu UMKM, company profile, dan bisnis kreatif memiliki
-        website yang modern, cepat, and mudah dipercaya customer.
-      </p>
-      <div
-        class="flex flex-wrap justify-center xl:justify-start gap-3 w-full sm:w-auto animate-cta"
-      >
-        <a
-          class="button button-primary w-full sm:w-auto"
-          href={whatsappUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Konsultasi Gratis
-        </a>
-        <a class="button button-secondary w-full sm:w-auto" href="#portfolio"
-          >Lihat Portfolio</a
-        >
-      </div>
-    </div>
+  </div>
 
-    <div
-      class="relative z-10 grid w-full max-w-[680px] min-h-[350px] md:min-h-[410px] justify-self-center xl:justify-self-end place-items-center"
-      aria-label="Website preview mockup"
+  {/* Content */}
+  <div
+    class="relative z-10 px-6 w-full max-w-[1000px] mx-auto text-center flex flex-col items-center"
+  >
+    <h1
+      class="mt-0 mb-6 text-white text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-jakarta font-extrabold leading-[1.05] tracking-tighter animate-title"
     >
-      <div
-        class="relative w-full max-w-[660px] min-h-[286px] md:min-h-[312px] overflow-hidden border border-white/8 rounded-lg bg-brand-card shadow-[0_20px_46px_rgba(0,0,0,0.35)] floating-slow animate-laptop"
+      Jasa Pembuatan Website Modern untuk <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 pb-2 inline-block -mb-2"
+        >Bisnis Profesional</span
       >
-        <div
-          class="flex gap-2 h-10.5 items-center px-4 border-b border-white/8 bg-brand-bg"
-        >
-          <span class="w-2.5 h-2.5 rounded-full bg-[#f87171]"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-[#fbbf24]"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-[#34d399]"></span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[128px_1fr] min-h-[270px]">
-          <div
-            class="hidden md:grid align-content-start gap-3 p-4 border-r border-white/8 bg-brand-bg"
-          >
-            <span class="h-8 rounded-lg bg-brand-coral/15"></span>
-            <span class="h-8 rounded-lg bg-white/5"></span>
-            <span class="h-8 rounded-lg bg-white/5"></span>
-          </div>
-          <div class="grid gap-3 p-4">
-            <div
-              class="min-h-[98px] rounded-lg bg-[linear-gradient(135deg,rgba(255,101,63,0.95),rgba(69,46,90,0.8)),linear-gradient(90deg,rgba(255,255,255,0.16)_0_40%,transparent_40%_100%)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]"
-            >
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <span
-                class="h-14 border border-white/8 rounded-lg bg-brand-bg shadow-[0_6px_18px_rgba(0,0,0,0.15)]"
-              ></span>
-              <span
-                class="hidden sm:block h-14 border border-white/8 rounded-lg bg-brand-bg shadow-[0_6px_18px_rgba(0,0,0,0.15)]"
-              ></span>
-              <span
-                class="hidden sm:block h-14 border border-white/8 rounded-lg bg-brand-bg shadow-[0_6px_18px_rgba(0,0,0,0.15)]"
-              ></span>
-            </div>
-            <div
-              class="hidden sm:grid grid-cols-4 items-end gap-2.5 h-14.5 p-2.5 rounded-lg bg-brand-bg"
-            >
-              <span class="h-[42%] rounded-t-md bg-white/10"></span>
-              <span class="h-[72%] rounded-t-md bg-brand-gold"></span>
-              <span class="h-[54%] rounded-t-md bg-brand-coral"></span>
-              <span class="h-[86%] rounded-t-md bg-brand-secondary"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="absolute right-2 sm:right-4 bottom-0 sm:bottom-6 w-28 sm:w-32 min-h-[204px] sm:min-h-[226px] p-2.5 sm:p-3 border border-white/12 rounded-[24px] bg-[#0f062a] shadow-[0_14px_34px_rgba(0,0,0,0.4)] floating-fast animate-phone"
+    </h1>
+    <p
+      class="mt-0 mb-8 md:mb-10 text-slate-300 text-base md:text-[1.15rem] font-inter leading-relaxed animate-desc max-w-[650px]"
+    >
+      Syzen Web membantu UMKM, company profile, dan bisnis kreatif memiliki
+      website yang modern, cepat, dan mudah dipercaya customer.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 animate-cta">
+      <a
+        class="button button-primary relative group overflow-hidden"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
       >
-        <div class="w-13.5 h-1.25 mx-auto mb-3 rounded-full bg-slate-700"></div>
+        <span class="relative z-10">Konsultasi Gratis</span>
         <div
-          class="grid gap-2 min-h-[164px] sm:min-h-[176px] p-2.5 sm:p-3 rounded-2xl bg-brand-bg"
+          class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
         >
-          <span
-            class="block h-14.5 rounded-lg bg-gradient-to-br from-brand-coral to-brand-gold"
-          ></span>
-          <span class="block h-6 rounded-lg bg-white/5"></span>
-          <span class="block h-6 rounded-lg bg-white/5"></span>
-          <span class="block h-6 rounded-lg bg-white/5"></span>
         </div>
-      </div>
+      </a>
+      <a class="button button-secondary" href="#portfolio"> Lihat Portfolio </a>
     </div>
   </div>
 </section>
 
 <style>
-  /* High-Performance Pure CSS Spring & Decelerate Entrance Animations */
+  /* ── Entrance Animations ── */
   @keyframes heroFadeInUp {
     from {
       opacity: 0;
@@ -129,51 +71,51 @@ import { whatsappUrl } from "../../data/siteConfig";
     }
   }
 
-  @keyframes heroFadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(35px) translateY(12px) scale(0.98);
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
     }
-    to {
-      opacity: 1;
-      transform: translateX(0) translateY(0) scale(1);
+    50% {
+      transform: translateY(-15px) rotate(4deg);
     }
+  }
+
+  @keyframes pulseSlow {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-float {
+    animation: float 4.5s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 8s ease-in-out infinite;
   }
 
   .animate-kicker {
     opacity: 0;
-    animation: heroFadeInUp 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 120ms;
+    animation: heroFadeInUp 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards 120ms;
   }
-
   .animate-title {
     opacity: 0;
-    animation: heroFadeInUp 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 220ms;
+    animation: heroFadeInUp 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards 220ms;
   }
-
   .animate-desc {
     opacity: 0;
-    animation: heroFadeInUp 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 360ms;
+    animation: heroFadeInUp 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards 360ms;
   }
-
   .animate-cta {
     opacity: 0;
-    animation: heroFadeInUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 500ms;
-  }
-
-  .animate-laptop {
-    opacity: 0;
-    animation: heroFadeInRight 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 320ms;
-  }
-
-  .animate-phone {
-    opacity: 0;
-    animation: heroFadeInUp 850ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: 580ms;
+    animation: heroFadeInUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards 500ms;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -181,11 +123,25 @@ import { whatsappUrl } from "../../data/siteConfig";
     .animate-title,
     .animate-desc,
     .animate-cta,
-    .animate-laptop,
-    .animate-phone {
+    .animate-float,
+    .animate-pulse-slow {
       opacity: 1 !important;
       transform: none !important;
       animation: none !important;
     }
   }
 </style>
+
+<!-- Wave: Hero → ValueStrip+PainPoints #0a1628 -->
+<div class="section-wave" style="background-color:#050d1a;" aria-hidden="true">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 100"
+    preserveAspectRatio="none"
+    style="height:100px;"
+  >
+    <path
+      d="M0,0 L0,30 C160,90 320,5 480,55 C640,100 800,10 960,55 C1120,98 1300,20 1440,60 L1440,100 L0,100 Z"
+      fill="#0a1628"></path>
+  </svg>
+</div>

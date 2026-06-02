@@ -1,5 +1,5 @@
 ---
-import { packages, whatsappUrl } from "../../data/siteConfig";
+import { packageCategories, whatsappUrl } from "../../data/siteConfig";
 import { Check, ArrowRight } from "lucide-react";
 
 function parsePrice(priceStr: string) {
@@ -7,17 +7,20 @@ function parsePrice(priceStr: string) {
     const amount = priceStr.replace(/mulai dari/i, "").trim();
     return { prefix: "Mulai dari", amount };
   }
-  return { prefix: "Estimasi biaya", amount: priceStr };
+  if (priceStr.toLowerCase() === "request quote" || priceStr.toLowerCase() === "diskusi kebutuhan") {
+    return { prefix: "Estimasi biaya", amount: "Diskusi Kebutuhan" };
+  }
+  return { prefix: "Investasi", amount: priceStr };
 }
 ---
 
 <section
-  class="section bg-transparent scroll-mt-24 md:scroll-mt-28"
+  class="section scroll-mt-24 md:scroll-mt-28 bg-[#050d1a]"
   id="pricing"
 >
   <div class="container">
     <div 
-      class="max-w-[760px] mb-12 reveal-on-scroll"
+      class="max-w-[760px] mb-12 reveal-on-scroll mx-auto text-center"
     >
       <p class="section-kicker">Pricing</p>
       <h2 class="section-heading-h2">
@@ -25,94 +28,186 @@ function parsePrice(priceStr: string) {
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-      {
-        packages.map((plan, index) => {
-          const { prefix, amount } = parsePrice(plan.price);
-          const isFeatured = plan.featured;
+    {/* TABS NAVIGATION */}
+    <div class="flex justify-center mb-10 reveal-on-scroll">
+      <div class="inline-flex bg-[#0a1628] border border-white/10 rounded-full p-1 relative overflow-hidden hide-scrollbar max-w-full overflow-x-auto whitespace-nowrap">
+        {packageCategories.map((category, index) => (
+          <button
+            class={`tab-btn relative z-10 px-5 sm:px-6 py-2.5 rounded-full text-[13px] sm:text-sm font-medium transition-colors duration-300 ${index === 0 ? 'text-white' : 'text-slate-400 hover:text-white'}`}
+            data-target={category.id}
+          >
+            {category.name}
+          </button>
+        ))}
+        {/* Active pill background */}
+        <div class="tab-indicator absolute top-1 bottom-1 bg-brand-accent rounded-full transition-all duration-300 ease-out z-0 pointer-events-none" style="width: 0; left: 4px;"></div>
+      </div>
+    </div>
 
-          return (
-            <div
-              class={`reveal-on-scroll h-full ${isFeatured ? 'z-10 relative' : ''}`}
-              style={`transition-delay: ${index * 80}ms;`}
-            >
-              <article
-                class={`relative flex flex-col p-8 border rounded-2xl bg-brand-card transition-all duration-300 hover:-translate-y-1.5 h-full ${
-                  isFeatured
-                    ? "border-brand-coral bg-gradient-to-b from-brand-card/95 to-brand-bg/95 shadow-[0_20px_50px_rgba(255,101,63,0.15)] scale-[1.02] hover:border-brand-coral hover:shadow-[0_24px_60px_rgba(255,101,63,0.22)]"
-                    : "border-white/6 hover:border-brand-coral/30 hover:shadow-[0_16px_40px_rgba(255,101,63,0.08)]"
-                }`}
-              >
-              {isFeatured && (
-                <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1 rounded-full border border-brand-coral/30 bg-brand-coral text-white text-[11px] font-extrabold tracking-widest uppercase shadow-[0_4px_12px_rgba(255,101,63,0.3)]">
-                  Recommended
-                </span>
-              )}
+    {/* TAB PANELS */}
+    <div class="relative min-h-[600px]">
+      {packageCategories.map((category, catIndex) => (
+        <div 
+          class={`tab-panel grid grid-cols-1 ${category.packages.length === 1 ? 'md:grid-cols-1 max-w-[400px] mx-auto' : 'md:grid-cols-3'} gap-6 lg:gap-8 items-stretch transition-all duration-500 ${catIndex === 0 ? 'opacity-100 relative z-10 translate-y-0' : 'opacity-0 absolute inset-x-0 top-0 pointer-events-none z-0 translate-y-4'}`}
+          id={`panel-${category.id}`}
+        >
+          {
+            category.packages.map((plan, index) => {
+              const { prefix, amount } = parsePrice(plan.price);
+              const isFeatured = plan.featured;
 
-              {/* Card Header */}
-              <div class="mb-6">
-                <h3 class="mb-1 text-white text-[18px] sm:text-[19px] font-bold font-satoshi">
-                  {plan.name}
-                </h3>
-                <p class="text-slate-400 text-[13px] sm:text-[13.5px] font-inter leading-relaxed">
-                  {plan.description}
-                </p>
-              </div>
+              return (
+                <div
+                  class={`h-full ${isFeatured ? 'z-10 relative' : ''}`}
+                  style={`transition-delay: ${index * 80}ms;`}
+                >
+                  <article
+                    class={`relative flex flex-col p-8 border rounded-2xl transition-all duration-300 h-full ${
+                      isFeatured
+                        ? "bg-gradient-to-b from-[#111f38] to-[#0a1628] border-brand-accent/40 shadow-[0_8px_30px_rgba(59,130,246,0.1)] md:scale-[1.02] hover:-translate-y-1.5 hover:border-brand-accent/80 hover:shadow-[0_12px_40px_rgba(59,130,246,0.2)]"
+                        : "bg-[#0c162c] border-white/5 hover:border-white/15 hover:bg-[#0d1a33] hover:-translate-y-1.5 shadow-lg"
+                    }`}
+                  >
+                  {isFeatured && (
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center px-4 py-1 rounded-full border border-blue-400/30 bg-[#0f1d35] text-blue-400 text-[11px] font-extrabold tracking-widest uppercase whitespace-nowrap shadow-sm">
+                      Paling Populer
+                    </span>
+                  )}
 
-              {/* Price Display */}
-              <div class="mb-6 pb-6 border-b border-white/6 flex flex-col justify-end">
-                <span class="text-brand-gold text-[11px] font-bold uppercase tracking-widest block mb-1">
-                  {prefix}
-                </span>
-                <strong class="text-white text-[28px] sm:text-[32px] font-extrabold leading-none font-satoshi tracking-tight">
-                  {amount}
-                </strong>
-              </div>
+                  {/* Card Header */}
+                  <div class="mb-6">
+                    <h3 class="mb-1 text-white text-[18px] sm:text-[19px] font-bold font-jakarta">
+                      {plan.name}
+                    </h3>
+                    <p class="text-slate-400 text-[13px] sm:text-[13.5px] font-inter leading-relaxed">
+                      {plan.description}
+                    </p>
+                  </div>
 
-              {/* Target fit callout badge */}
-              <div class="mb-7 p-4 border border-white/5 rounded-xl bg-white/3">
-                <span class="text-[11px] font-bold uppercase tracking-widest text-slate-400 block mb-1.5">
-                  Untuk Kebutuhan:
-                </span>
-                <p class="m-0 text-slate-300 text-[13px] sm:text-[13.5px] leading-relaxed font-inter font-medium">
-                  {plan.fit}
-                </p>
-              </div>
+                  {/* Price Display */}
+                  <div class="mb-6 pb-6 border-b border-white/6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-[11px] font-bold uppercase tracking-widest block mb-1">
+                      {prefix}
+                    </span>
+                    <strong class="text-white text-[28px] sm:text-[32px] font-extrabold leading-none font-jakarta tracking-tight">
+                      {amount}
+                    </strong>
+                  </div>
 
-              {/* Features List */}
-              <ul class="grid gap-3.5 mb-8 p-0 list-none mt-auto">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start gap-3 text-slate-200 text-[13.5px] sm:text-[14px] leading-snug font-inter">
-                    <div class="w-5 h-5 rounded-full bg-emerald-500/12 flex items-center justify-center shrink-0 border border-emerald-500/20 mt-0.5">
-                      <Check
-                        className="w-3.5 h-3.5 text-emerald-400"
-                        strokeWidth={3.5}
-                      />
-                    </div>
-                    <span class="text-slate-300 font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                  {/* Target fit callout badge */}
+                  <div class="mb-7 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-slate-500 block mb-1.5">
+                      Untuk Kebutuhan:
+                    </span>
+                    <p class="m-0 text-slate-300 text-[13px] sm:text-[13.5px] leading-relaxed font-inter font-medium">
+                      {plan.fit}
+                    </p>
+                  </div>
 
-              {/* Action Button CTA */}
-              <a
-                class={`w-full py-3.5 rounded-xl font-bold text-[14px] flex items-center justify-center gap-2 transition-all duration-300 font-satoshi tracking-wider border ${
-                  isFeatured
-                    ? "bg-brand-coral border-brand-coral text-white hover:bg-white hover:text-brand-coral hover:border-white shadow-[0_6px_20px_rgba(255,101,63,0.2)] hover:shadow-[0_10px_28px_rgba(255,101,63,0.35)]"
-                    : "bg-white/4 border-white/8 text-white hover:bg-white hover:text-brand-bg hover:border-white shadow-md"
-                }`}
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span>Mulai Diskusi</span>
-                <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
-              </a>
-              </article>
-            </div>
-          );
-        })
-      }
+                  {/* Features List */}
+                  <ul class="grid gap-3.5 mb-8 p-0 list-none mt-auto">
+                    {plan.features.map((feature) => (
+                      <li class="flex items-start gap-3 text-slate-200 text-[13.5px] sm:text-[14px] leading-snug font-inter">
+                        <div class="w-[20px] h-[20px] rounded-full bg-blue-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <Check
+                            className="w-3.5 h-3.5 text-blue-400"
+                            strokeWidth={3}
+                          />
+                        </div>
+                        <span class="text-slate-300 font-medium">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Action Button CTA */}
+                  <a
+                    class={`w-full py-3.5 rounded-xl font-bold text-[14px] flex items-center justify-center gap-2 transition-all duration-300 font-jakarta tracking-wider mt-auto ${
+                      isFeatured
+                        ? "bg-gradient-to-r from-brand-accent to-blue-500 text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)] hover:shadow-[0_6px_25px_rgba(59,130,246,0.4)] hover:-translate-y-0.5"
+                        : "bg-white/5 border border-white/10 text-slate-200 hover:bg-white hover:text-[#050d1a] hover:border-white shadow-sm hover:shadow-md"
+                    }`}
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span>Mulai Diskusi</span>
+                    <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                  </a>
+                  </article>
+                </div>
+              );
+            })
+          }
+        </div>
+      ))}
     </div>
   </div>
 </section>
+
+<script>
+  function setupPricingTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    const indicator = document.querySelector('.tab-indicator') as HTMLElement;
+
+    if (!tabBtns.length || !tabPanels.length) return;
+
+    function setActiveTab(targetId: string | null, btn: Element) {
+      if (!targetId) return;
+
+      // Update buttons
+      tabBtns.forEach(b => {
+        b.classList.remove('text-white');
+        b.classList.add('text-slate-400', 'hover:text-white');
+      });
+      btn.classList.remove('text-slate-400', 'hover:text-white');
+      btn.classList.add('text-white');
+
+      // Update panels
+      tabPanels.forEach(p => {
+        if (p.id === `panel-${targetId}`) {
+          p.classList.remove('opacity-0', 'absolute', 'inset-x-0', 'top-0', 'pointer-events-none', 'z-0', 'translate-y-4');
+          p.classList.add('opacity-100', 'relative', 'z-10', 'translate-y-0');
+        } else {
+          p.classList.remove('opacity-100', 'relative', 'z-10', 'translate-y-0');
+          p.classList.add('opacity-0', 'absolute', 'inset-x-0', 'top-0', 'pointer-events-none', 'z-0', 'translate-y-4');
+        }
+      });
+
+      // Update indicator
+      if (indicator && btn instanceof HTMLElement) {
+        indicator.style.width = `${btn.offsetWidth}px`;
+        indicator.style.left = `${btn.offsetLeft}px`;
+      }
+    }
+
+    // Initialize indicator on load
+    setTimeout(() => {
+      const activeBtn = document.querySelector('.tab-btn.text-white');
+      if (activeBtn) {
+        setActiveTab(activeBtn.getAttribute('data-target'), activeBtn);
+      }
+    }, 50);
+
+    // Update on resize
+    window.addEventListener('resize', () => {
+      const activeBtn = document.querySelector('.tab-btn.text-white') as HTMLElement;
+      if (activeBtn && indicator) {
+        indicator.style.width = `${activeBtn.offsetWidth}px`;
+        indicator.style.left = `${activeBtn.offsetLeft}px`;
+      }
+    });
+
+    // Add click listeners
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        setActiveTab(targetId, btn);
+      });
+    });
+  }
+
+  // Run on first load and view transitions
+  setupPricingTabs();
+  document.addEventListener('astro:page-load', setupPricingTabs);
+</script>

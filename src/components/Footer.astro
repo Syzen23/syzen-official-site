@@ -3,15 +3,14 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
 ---
 
 <footer
-  class="border-t border-white/10 bg-[#0c061e] pt-16 pb-8 mt-12 relative overflow-hidden"
+  class="border-t border-white/10 bg-[#030a12] pt-16 pb-8 mt-12 relative overflow-hidden"
 >
-  {/* Ambient background glow for footer */}
   <div
-    class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-brand-coral/50 to-transparent opacity-50"
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent opacity-50"
   >
   </div>
   <div
-    class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-brand-coral/5 blur-[80px] rounded-full pointer-events-none -z-10"
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-brand-accent/4 blur-[80px] rounded-full pointer-events-none -z-10"
   >
   </div>
 
@@ -27,10 +26,10 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
           aria-label="Syzen Web home"
         >
           <span
-            class="inline-grid w-10 h-10 place-items-center rounded-[10px] bg-brand-coral text-white font-extrabold shadow-[0_8px_20px_rgba(255,101,63,0.3)] text-base"
+            class="inline-grid w-10 h-10 place-items-center rounded-[10px] bg-brand-accent text-white font-extrabold shadow-[0_8px_20px_rgba(59,130,246,0.3)] text-base"
             >S</span
           >
-          <span class="font-satoshi tracking-wide text-[19px]">Syzen Web</span>
+          <span class="font-jakarta tracking-wide text-[19px]">Syzen Web</span>
         </a>
         <p
           class="text-slate-400 text-[14px] leading-relaxed max-w-sm font-inter"
@@ -46,17 +45,17 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
 
       {/* Quick Links (Spans 3 cols) */}
       <div class="md:col-span-3 flex flex-col gap-4">
-        <h4 class="text-white font-satoshi font-bold tracking-wide mb-2">
+        <h4 class="text-white font-jakarta font-bold tracking-wide mb-2">
           Navigasi
         </h4>
         <nav class="flex flex-col gap-3.5" aria-label="Footer navigation">
           {
             navItems.map((item) => (
               <a
-                class="text-slate-400 text-[14px] font-medium hover:text-brand-coral transition-colors w-fit relative group flex items-center gap-2"
+                class="text-slate-400 text-[14px] font-medium hover:text-brand-accent transition-colors w-fit relative group flex items-center gap-2"
                 href={item.href}
               >
-                <span class="w-1 h-1 rounded-full bg-brand-coral/0 group-hover:bg-brand-coral transition-colors" />
+                <span class="w-1 h-1 rounded-full bg-brand-accent/0 group-hover:bg-brand-accent transition-colors" />
                 {item.label}
               </a>
             ))
@@ -66,7 +65,7 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
 
       {/* Socials & Contact (Spans 3 cols) */}
       <div class="md:col-span-3 flex flex-col gap-4">
-        <h4 class="text-white font-satoshi font-bold tracking-wide mb-2">
+        <h4 class="text-white font-jakarta font-bold tracking-wide mb-2">
           Hubungi Kami
         </h4>
         <div class="flex flex-col gap-3.5">
@@ -102,7 +101,7 @@ import { navItems, whatsappUrl } from "../data/siteConfig";
     >
       <p>&copy; {new Date().getFullYear()} Syzen Web. All rights reserved.</p>
       <p class="flex items-center gap-1.5">
-        Designed with <span class="text-brand-coral animate-pulse">❤</span> in Indonesia.
+        Designed with <span class="text-brand-accent animate-pulse">❤</span> in Indonesia.
       </p>
     </div>
   </div>

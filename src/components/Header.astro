@@ -4,13 +4,13 @@ import { Menu, X } from 'lucide-react';
 ---
 
 <header 
-	class="sticky top-4 md:top-6 z-40 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl px-3 py-2.5 md:px-4 md:py-3 border border-white/10 rounded-full bg-[#1E104E]/80 backdrop-blur-md flex items-center justify-between transition-all duration-300" 
+	class="sticky top-4 md:top-6 z-40 mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-5xl px-3 py-2.5 md:px-4 md:py-3 border border-white/10 rounded-full bg-[#050d1a]/80 backdrop-blur-md flex items-center justify-between transition-all duration-300" 
 	data-header
 >
 	{/* Brand Logo */}
 	<a data-animate-logo class="inline-flex items-center gap-2.5 min-w-max text-white text-base md:text-lg font-extrabold no-underline relative z-50 ml-1" href="#top" aria-label="Syzen Web home">
-		<span class="inline-grid w-9 h-9 place-items-center rounded-full bg-brand-coral text-white font-extrabold shadow-[0_4px_12px_rgba(255,101,63,0.3)] text-sm md:text-base">S</span>
-		<span class="font-satoshi tracking-wide">Syzen Web</span>
+		<span class="inline-grid w-9 h-9 place-items-center rounded-full bg-brand-accent text-white font-extrabold shadow-[0_4px_12px_rgba(59,130,246,0.3)] text-sm md:text-base">S</span>
+		<span class="font-jakarta tracking-wide">Syzen Web</span>
 	</a>
 
 	{/* Desktop Navigation Links */}
@@ -24,7 +24,7 @@ import { Menu, X } from 'lucide-react';
 
 	{/* Desktop Actions */}
 	<div data-animate-actions class="hidden md:flex items-center justify-end shrink-0 mr-1">
-		<a class="flex items-center justify-center bg-brand-coral hover:bg-[#ff5530] text-white font-bold text-[13px] md:text-[14px] px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_12px_rgba(255,101,63,0.3)] hover:shadow-[0_6px_16px_rgba(255,101,63,0.45)] hover:-translate-y-0.5" href={whatsappUrl} target="_blank" rel="noreferrer">
+		<a class="flex items-center justify-center bg-brand-accent hover:bg-brand-accent-hover text-white font-bold text-[13px] md:text-[14px] px-5 py-2 md:py-2.5 rounded-full transition-all duration-300 shadow-[0_4px_12px_rgba(59,130,246,0.3)] hover:shadow-[0_6px_16px_rgba(59,130,246,0.45)] hover:-translate-y-0.5" href={whatsappUrl} target="_blank" rel="noreferrer">
 			Konsultasi
 		</a>
 	</div>
@@ -36,14 +36,14 @@ import { Menu, X } from 'lucide-react';
 		class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 active:scale-95 transition-all duration-200 relative z-50 cursor-pointer" 
 		aria-label="Toggle navigation menu"
 	>
-		<span class="hamburger-icon flex items-center justify-center"><Menu class="w-5 h-5" /></span>
-		<span class="close-icon hidden items-center justify-center"><X class="w-5 h-5" /></span>
+		<span class="hamburger-icon flex items-center justify-center"><Menu className="w-5 h-5" /></span>
+		<span class="close-icon hidden items-center justify-center"><X className="w-5 h-5" /></span>
 	</button>
 
 	{/* Mobile Glassmorphic Drawer Menu */}
 	<div 
 		data-mobile-menu 
-		class="mobile-menu absolute top-[calc(100%+0.5rem)] left-0 w-full p-5 border border-white/8 rounded-xl bg-[#1E104E]/98 backdrop-blur-xl flex flex-col gap-4 z-40 shadow-2xl md:hidden"
+		class="mobile-menu absolute top-[calc(100%+0.5rem)] left-0 w-full p-5 border border-white/8 rounded-xl bg-[#050d1a]/98 backdrop-blur-xl flex flex-col gap-4 z-40 shadow-2xl md:hidden"
 	>
 		<nav class="flex flex-col gap-1" aria-label="Mobile navigation">
 			{navItems.map((item) => (
@@ -207,11 +207,11 @@ import { Menu, X } from 'lucide-react';
 		isScrolled = nextState;
 		if (header) {
 			if (isScrolled) {
-				header.classList.add('bg-[#150a36]/95', 'border-white/20', 'shadow-[0_8px_32px_rgba(0,0,0,0.5)]');
-				header.classList.remove('bg-[#1E104E]/80', 'border-white/10');
+				header.classList.add('bg-[#030a12]/95', 'border-white/20', 'shadow-[0_8px_32px_rgba(0,0,0,0.5)]');
+				header.classList.remove('bg-[#050d1a]/80', 'border-white/10');
 			} else {
-				header.classList.remove('bg-[#150a36]/95', 'border-white/20', 'shadow-[0_8px_32px_rgba(0,0,0,0.5)]');
-				header.classList.add('bg-[#1E104E]/80', 'border-white/10');
+				header.classList.remove('bg-[#030a12]/95', 'border-white/20', 'shadow-[0_8px_32px_rgba(0,0,0,0.5)]');
+				header.classList.add('bg-[#050d1a]/80', 'border-white/10');
 			}
 		}
 	};
