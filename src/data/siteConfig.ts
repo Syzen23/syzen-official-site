@@ -188,12 +188,18 @@ export const portfolioProjects: PortfolioProject[] = [
   },
 ];
 
+
+export interface PackageFeature {
+  highlight: string;
+  text: string;
+}
+
 export interface PackageItem {
   name: string;
   price: string;
   description: string;
   fit: string;
-  features: string[];
+  features: (string | PackageFeature)[];
   featured: boolean;
 }
 
@@ -204,14 +210,14 @@ export interface PackageCategory {
 }
 
 export const packageCategories: PackageCategory[] = [
-  {
-    id: "website",
-    name: "Website Profile / Landing Page",
+{
+    id: "landing",
+    name: "Landing Page",
     packages: [
       {
-        name: "BASIC",
-        price: "Rp750.000",
-        description: "Landing Page Profesional (1 Halaman)",
+        name: "BASIC LANDING PAGE",
+        price: "Rp 850.000",
+        description: "",
         fit: "Cocok untuk UMKM, jasa personal, dan promosi produk sederhana.",
         features: [
           "Hingga 5 Section Konten",
@@ -222,55 +228,57 @@ export const packageCategories: PackageCategory[] = [
           "SSL Security",
           "2x Revisi Minor",
           "Panduan Penggunaan Website",
-          "Domain & Hosting Menyesuaikan Paket",
+          "Domain Gratis 1 Tahun"
         ],
         featured: false,
       },
       {
-        name: "STANDARD",
-        price: "Rp1.500.000",
-        description: "Website Company Profile (Hingga 6 Halaman)",
+        name: "PREMIUM LANDING PAGE",
+        price: "Rp 1.750.000",
+        description: "",
         fit: "Cocok untuk bisnis menengah yang ingin tampil kredibel dan terpercaya.",
         features: [
-          "Beranda, Tentang Kami, Layanan, Portofolio / Galeri, Kontak, Halaman Tambahan",
+          "Beranda, Tentang Kami, Layanan,  Galeri, Kontak, Halaman Tambahan",
           "Formulir Kontak",
           "Integrasi Google Maps",
           "Animasi & Interaksi Modern",
           "SEO Setup Lengkap & Google Search Console",
           "SSL Security",
           "3x Revisi Minor & Dokumentasi Penggunaan",
-          "Domain Gratis 1 Tahun",
+          "Panduan Penggunaan Website",
+          "Domain Gratis 1 Tahun"
         ],
         featured: true,
       },
       {
-        name: "PREMIUM",
-        price: "Rp2.500.000",
-        description: "Semua Fitur Paket Standard dengan Desain Khusus",
+        name: "EXPERT LANDING PAGE",
+        price: "Rp 3.500.000",
+        description: "",
         fit: "Cocok untuk bisnis skala besar atau yang mengutamakan branding premium.",
         features: [
           "Desain UI/UX Premium & Custom",
-          "Halaman Sesuai Kebutuhan",
+          "Halaman Sesuai Kebutuhan (Multi-Page)",
           "Animasi Interaktif Premium (GSAP)",
           "Form Lead Generation",
           "Integrasi Social Media",
           "Optimasi Core Web Vitals & Advanced SEO",
           "Integrasi Google Analytics",
           "Prioritas Support & 5x Revisi Minor",
-          "Domain Gratis 1 Tahun & Maintenance 1 Bulan",
+          "Panduan Penggunaan Website",
+          "Domain Gratis 1 Tahun & Maintenance 1 Bulan"
         ],
         featured: false,
-      },
+      }
     ],
   },
   {
     id: "pos",
-    name: "POS / Kasir App",
+    name: "Sistem POS",
     packages: [
       {
-        name: "BASIC",
-        price: "Rp1.500.000",
-        description: "Sistem kasir ringan untuk operasional harian",
+        name: "BASIC POS",
+        price: "Rp 1.500.000",
+        description: "",
         fit: "Cocok untuk usaha kecil yang baru mulai digitalisasi.",
         features: [
           "Dashboard Admin",
@@ -281,14 +289,14 @@ export const packageCategories: PackageCategory[] = [
           "Laporan Penjualan Sederhana",
           "Responsive (Desktop & Mobile)",
           "Setup & Deployment",
-          "Dokumentasi & 2x Revisi Minor",
+          "Dokumentasi & 2x Revisi Minor"
         ],
         featured: false,
       },
       {
         name: "BUSINESS POS",
-        price: "Rp3.500.000",
-        description: "Sistem kasir lengkap dengan laporan dan manajemen",
+        price: "Rp 3.500.000",
+        description: "",
         fit: "Cocok untuk toko yang memiliki banyak produk dan membutuhkan laporan lebih lengkap.",
         features: [
           "Semua Fitur Paket Basic",
@@ -299,14 +307,14 @@ export const packageCategories: PackageCategory[] = [
           "Filter & Export Data",
           "Hak Akses Admin dan Kasir",
           "Dashboard Statistik Penjualan",
-          "Dukungan Teknis Awal & 3x Revisi Minor",
+          "Dukungan Teknis Awal & 3x Revisi Minor"
         ],
         featured: true,
       },
       {
         name: "PREMIUM POS",
-        price: "Rp6.000.000",
-        description: "Sistem kasir skala besar dan enterprise",
+        price: "Rp 6.000.000",
+        description: "",
         fit: "Cocok untuk bisnis yang ingin sistem lebih profesional dan scalable.",
         features: [
           "Semua Fitur Paket Business",
@@ -314,10 +322,9 @@ export const packageCategories: PackageCategory[] = [
           "Sistem Bonus / Loyalty Pelanggan",
           "Notifikasi Stok Menipis",
           "Import/Export Data Excel & PDF",
-          "Integrasi WhatsApp",
           "Dashboard Analitik Lengkap",
           "Backup Database Otomatis",
-          "Prioritas Support, Maintenance 1 Bulan & 5x Revisi",
+          "Prioritas Support, Maintenance 1 Bulan & 5x Revisi"
         ],
         featured: false,
       },
@@ -325,25 +332,32 @@ export const packageCategories: PackageCategory[] = [
   },
   {
     id: "custom",
-    name: "Custom Development",
+    name: "Sistem Custom",
     packages: [
       {
         name: "CUSTOM DEVELOPMENT",
         price: "Request Quote",
-        description: "Solusi website dan sistem yang dibuat sesuai kebutuhan Anda.",
+        description: "Solusi website dan sistem web app kompleks yang dibuat dari nol sesuai dengan alur kerja kebutuhan bisnis Anda.",
         fit: "Cocok untuk proyek unik, sistem internal, atau aplikasi web terintegrasi khusus.",
         features: [
-          "Website Pernikahan Digital & Event/Organisasi",
-          "Website Sekolah & Komunitas",
-          "Dashboard Admin Sederhana",
-          "Sistem Pendataan & Reservasi / Booking",
-          "Sistem Registrasi Online & Inventaris",
-          "Formulir & Database Online",
-          "Landing Page / Company Profile Custom",
-          "Fitur dan Tampilan Sesuai Permintaan",
-          "Harga menyesuaikan fitur, tingkat kesulitan & waktu pengerjaan.",
+          {
+            highlight: "Fitur Sistem Eksklusif",
+            text: "Pembuatan logika aplikasi kustom seperti sistem absensi, reservasi, multi-gudang, hingga bonus afiliasi."
+          },
+          {
+            highlight: "Panel Admin Kustom",
+            text: "Panel kontrol administrator dengan UI/UX yang modern namun mudah dipahami untuk operasional staf non-teknis."
+          },
+          {
+            highlight: "Integrasi API 3rd Party",
+            text: "Penghubungan dengan layanan pihak ketiga seperti Payment Gateway, WhatsApp API, atau layanan kurir logistik."
+          },
+          {
+            highlight: "Harga Menyesuaikan",
+            text: "Biaya investasi disesuaikan secara transparan berdasarkan kompleksitas fitur, tingkat kesulitan, dan waktu pengerjaan."
+          }
         ],
-        featured: true,
+        featured: false,
       },
     ],
   },
